@@ -9,13 +9,13 @@ format:
 	black *.py --line-length 88
 
 process: ./Makefile-Action/raw_data/WHR2023.csv
-	python data_processing.py $(RAW_DATA_PATH)
+	python ./Makefile-Action/data_processing.py $(RAW_DATA_PATH)
 
 analyze: ./Makefile-Action/processed_data/WHR2023_cleaned.csv
-	python data_analysis.py $(PROCESSED_DATA)
+	python ./Makefile-Action/data_analysis.py $(PROCESSED_DATA)
 
 clean: 
-	rm -f processed_data/* **/.png
+	rm -f ./Makefile-Action/processed_data/* **/.png
 
 summary: ./Makefile-Action/processed_data/summary.txt
 	echo "# Data Summary" > report.md
