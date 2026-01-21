@@ -3,7 +3,7 @@ PROCESSED_DATA = "processed_data/WHR2023_cleaned.csv"
 
 install:
 	pip install --upgrade pip &&\
-	    pip install -r requirements.txt
+		pip install -r requirements.txt
 
 format:
 	black *.py --line-length 88
