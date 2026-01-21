@@ -8,16 +8,16 @@ install:
 format:
 	black *.py --line-length 88
 
-process: ./raw_data/WHR2023.csv
+process: ./Makefile-Action/raw_data/WHR2023.csv
 	python data_processing.py $(RAW_DATA_PATH)
 
-analyze: ./processed_data/WHR2023_cleaned.csv
+analyze: ./Makefile-Action/processed_data/WHR2023_cleaned.csv
 	python data_analysis.py $(PROCESSED_DATA)
 
 clean: 
 	rm -f processed_data/* **/.png
 
-summary: ./processed_data/summary.txt
+summary: ./Makefile-Action/processed_data/summary.txt
     echo "# Data Summary" > report.md
     cat ./processed_data/summary.txt >> report.md
    
