@@ -15,7 +15,7 @@ jobs:
       - name: Install Packages
         run: |
           pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r ./Makefile-Action/requirements.txt
       - name: Format
         run: black *.py --line-length 88
       - name: Data Processing
