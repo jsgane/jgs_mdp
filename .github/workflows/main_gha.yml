@@ -15,23 +15,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: iterative/setup-cml@v3
-
       - name: Install Packages
-        run: make install
-
+        run: |
+          pip install --upgrade pip
+          pip install -r ./Makefile-Action/requirements.txt
       - name: Format
-        run: make format
-
+        run: black *.py --line-length 88
       - name: Data Processing
         env: 
           RAW_DATA_DIR: "./Makefile-Action/raw_data/WHR2023.csv"
-        run: make process RAW_DATA_PATH = $RAW_DATA_DIR
-
+        run: python ./Makefile-Action/data_processing.py $RAW_DATA_DIR
       - name: Data Analysis
         env:
           CLEAN_DATA_DIR: "./Makefile-Action/processed_data/WHR2023_cleaned.csv"
-        run: make analyze PROCESSED_DATA = $CLEAN_DATA_DIR
-      - name: Data Summary
-        env: 
-            REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: make summary
+        run: python ./Makefile-Action/data_analysis.py $CLEAN_DATA_DIR
