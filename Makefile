@@ -1,5 +1,5 @@
-RAW_DATA_PATH = "raw_data/WHR2023.csv"
-PROCESSED_DATA = "processed_data/WHR2023_cleaned.csv"
+RAW_DATA_PATH = "./Makefile-Action/raw_data/WHR2023.csv"
+PROCESSED_DATA = "./Makefile-Action/processed_data/WHR2023_cleaned.csv"
 
 install:
 	pip install --upgrade pip &&\
