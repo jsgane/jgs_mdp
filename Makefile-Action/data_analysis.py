@@ -6,10 +6,11 @@ import pandas as pd
 import seaborn as sns
 from pathlib import Path
 
-figures_dir = Path("figures")
-figures_dir.mkdir(parents=True, exist_ok=True)
+#figures_dir = Path("figures")
+#figures_dir.mkdir(parents=True, exist_ok=True)
+#plt.savefig(figures_dir / "happiness_score_distribution.png")
 
-plt.savefig(figures_dir / "happiness_score_distribution.png")
+plt.savefig("happiness_score_distribution.png")
 
 # Check if the data location argument is provided
 if len(sys.argv) != 2:
