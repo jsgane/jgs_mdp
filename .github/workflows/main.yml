@@ -15,15 +15,14 @@ jobs:
       - name: Install Packages
         run: |
           pip install --upgrade pip
-          pip install -r ../Makefile-Action/requirements.txt
+          pip install -r ./Makefile-Action/requirements.txt
       - name: Format
         run: black *.py --line-length 88
       - name: Data Processing
         env: 
-          RAW_DATA_DIR: "../Makefile-Action/raw_data/WHR2023.csv"
-        run: python ../Makefile-Action/data_processing.py $RAW_DATA_DIR
+          RAW_DATA_DIR: "./Makefile-Action/raw_data/WHR2023.csv"
+        run: python ./Makefile-Action/data_processing.py $RAW_DATA_DIR
       - name: Data Analysis
         env:
-          CLEAN_DATA_DIR: "../Makefile-Action/processed_data/WHR2023_cleaned.csv"
-        run: python ../Makefile-Action/data_analysis.py $CLEAN_DATA_DIR
-         
+          CLEAN_DATA_DIR: "./Makefile-Action/processed_data/WHR2023_cleaned.csv"
+        run: python ./Makefile-Action/data_analysis.py $CLEAN_DATA_DIR

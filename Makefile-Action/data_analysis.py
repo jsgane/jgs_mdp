@@ -5,11 +5,17 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 from pathlib import Path
+import os
 
+# Créer dossier
+os.makedirs("processed_data", exist_ok=True)
 figures_dir = Path("figures")
-figures_dir.mkdir(parents=True, exist_ok=True)
 
+os.makedirs(figures_dir, exist_ok=True)
+#figures_dir.mkdir(parents=True, exist_ok=True)
 plt.savefig(figures_dir / "happiness_score_distribution.png")
+
+plt.savefig("happiness_score_distribution.png")
 
 # Check if the data location argument is provided
 if len(sys.argv) != 2:
@@ -33,7 +39,8 @@ info = buffer.getvalue()
 
 ## Write metrics to file
 with open("processed_data/summary.txt", "w") as outfile:
-    f"\n## Data Summary\n\n{summary}\n\n## Data Info\n\n{info}\n\n## Dataframe\n\n{data_head}"
+    #f"\n## Data Summary\n\n{summary}\n\n## Data Info\n\n{info}\n\n## Dataframe\n\n{data_head}"
+    outfile.write(f"\n## Data Summary\n\n{summary}\n\n## Data Info\n\n{info}\n\n## Dataframe\n\n{data_head}")
 
 print("Data summary saved in processed_data folder!")
 

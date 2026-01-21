@@ -2,8 +2,8 @@ import sys
 import pandas as pd
 from pathlib import Path
 
-output_path = Path("/home/sarrj/mdp_load_sos/load_sos/Makefile-Action/processed_data")
-output_path.mkdir(parents=True, exist_ok=True)
+#output_path = Path("/home/sarrj/mdp_load_sos/load_sos/Makefile-Action/processed_data")
+#output_path.mkdir(parents=True, exist_ok=True)
 
 # Check if the data location argument is provided
 if len(sys.argv) != 2:
@@ -47,4 +47,5 @@ print(df.isnull().sum())
 print(df.head())
 
 # Save the cleaned and normalized dataset to a new CSV file (step 4)
-df.to_csv(output_path / "WHR2023_cleaned.csv", index=False)
+df.to_csv("WHR2023_cleaned.csv", index=False)
+#df.to_csv(output_path / "WHR2023_cleaned.csv", index=False)
