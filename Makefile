@@ -39,4 +39,3 @@ summary: ./Makefile-Action/processed_data/summary.txt
    
 	cml comment create report.md
 
-all: install format process analyze summary
