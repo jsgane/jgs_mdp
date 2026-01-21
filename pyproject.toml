@@ -1,0 +1,32 @@
+[project]
+name = "load_sos"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "dagster",
+    "dagster-cloud",
+    "dagster-dbt>=0.28.3",
+    "dagster-snowflake>=0.28.3",
+    "dagster-snowflake-pandas>=0.28.3",
+    "dbt-duckdb>=1.10.0",
+    "dbt-snowflake>=1.10.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "dagster-webserver",
+    "pytest",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.dagster]
+module_name = "load_sos.definitions"
+code_location_name = "load_sos"
+
+[tool.setuptools.packages.find]
+exclude=["load_sos_tests"]

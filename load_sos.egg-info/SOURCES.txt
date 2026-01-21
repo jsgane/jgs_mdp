@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+load_sos/__init__.py
+load_sos/assets.py
+load_sos/definitions.py
+load_sos/sos_pipeline.py
+load_sos.egg-info/PKG-INFO
+load_sos.egg-info/SOURCES.txt
+load_sos.egg-info/dependency_links.txt
+load_sos.egg-info/requires.txt
+load_sos.egg-info/top_level.txt

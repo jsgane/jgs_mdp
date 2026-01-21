@@ -1,0 +1,11 @@
+dagster
+dagster-cloud
+dagster-dbt>=0.28.3
+dagster-snowflake>=0.28.3
+dagster-snowflake-pandas>=0.28.3
+dbt-duckdb>=1.10.0
+dbt-snowflake>=1.10.3
+
+[dev]
+dagster-webserver
+pytest
