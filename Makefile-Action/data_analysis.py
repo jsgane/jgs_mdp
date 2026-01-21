@@ -5,6 +5,10 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 from pathlib import Path
+import os
+
+# Créer dossier
+os.makedirs("processed_data", exist_ok=True)
 
 #figures_dir = Path("figures")
 #figures_dir.mkdir(parents=True, exist_ok=True)
@@ -34,7 +38,8 @@ info = buffer.getvalue()
 
 ## Write metrics to file
 with open("processed_data/summary.txt", "w") as outfile:
-    f"\n## Data Summary\n\n{summary}\n\n## Data Info\n\n{info}\n\n## Dataframe\n\n{data_head}"
+    #f"\n## Data Summary\n\n{summary}\n\n## Data Info\n\n{info}\n\n## Dataframe\n\n{data_head}"
+    outfile.write(f"\n## Data Summary\n\n{summary}\n\n## Data Info\n\n{info}\n\n## Dataframe\n\n{data_head}")
 
 print("Data summary saved in processed_data folder!")
 
