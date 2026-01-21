@@ -9,10 +9,11 @@ import os
 
 # Créer dossier
 os.makedirs("processed_data", exist_ok=True)
+figures_dir = Path("figures")
 
-#figures_dir = Path("figures")
+os.makedirs(figures_dir, exist_ok=True)
 #figures_dir.mkdir(parents=True, exist_ok=True)
-#plt.savefig(figures_dir / "happiness_score_distribution.png")
+plt.savefig(figures_dir / "happiness_score_distribution.png")
 
 plt.savefig("happiness_score_distribution.png")
 
