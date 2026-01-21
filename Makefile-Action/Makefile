@@ -3,19 +3,19 @@ PROCESSED_DATA = "processed_data/WHR2023_cleaned.csv"
 
 install:
 	pip install --upgrade pip &&\
-	pip install -r ./requirements.txt
+	pip install -r ./Makefile-Action/requirements.txt
 
 format:
 	black *.py --line-length 88
 
 process: ./raw_data/WHR2023.csv
-		python data_processing.py $(RAW_DATA_PATH)
+	python data_processing.py $(RAW_DATA_PATH)
 
 analyze: ./processed_data/WHR2023_cleaned.csv
-		python data_analysis.py $(PROCESSED_DATA)
+	python data_analysis.py $(PROCESSED_DATA)
 
 clean: 
-		rm -f processed_data/* **/.png
+	rm -f processed_data/* **/.png
 
 summary: ./processed_data/summary.txt
     echo "# Data Summary" > report.md
